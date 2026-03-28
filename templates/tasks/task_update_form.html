@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Task update</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update task</button>
+        <a href="{% url 'tasks:task-list' %}" class="btn btn-secondary">Back to task list</a>
+    </form>
+</div>
+{% endblock %}
